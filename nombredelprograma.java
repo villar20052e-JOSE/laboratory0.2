@@ -1,4 +1,5 @@
 public class nombredelprograma {
-hola 
-  ejemplo
+  public static void main(String[] args) {
+    System.out.println("¡Hola, mundo!");
+  }
 }
