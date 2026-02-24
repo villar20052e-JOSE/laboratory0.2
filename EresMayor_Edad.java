@@ -1,8 +1,6 @@
-   import java.util.Scanner;
+import java.util.Scanner;
 
 public class EresMayor_Edad {
- 
-
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -21,4 +19,3 @@ public class EresMayor_Edad {
         sc.close();
     }
 }
-
