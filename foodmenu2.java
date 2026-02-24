@@ -10,7 +10,13 @@ public class foodmenu2 {
     System.out.println("2. Hamburguesa");
     System.out.println("3. Tacos");
     System.out.println("4. Ensalada");
-    System.out.print("Por favor, selecciona una opción (1-4): ");
+    System.out.println("5. costillitas");
+    System.out.println("6. bistec picado");
+    System.out.println("7. papas fritas");
+    System.out.println("8. patacones");
+    System.out.println("9. aros de cebolla");
+    System.out.println("10. alitas BBQ");
+    System.out.print("Por favor, selecciona una opción (1-10): ");
 
     int opcion = teclado.nextInt();
 
