@@ -118,6 +118,8 @@ public class foodmenu {
     System.out.println("1. Soda ($1.50)");
     System.out.println("2. Jugo Natural ($3.00)");
     System.out.println("3. Limonada ($2.50)");
+    System.out.println("4. agua");
+    System.out.println("5. ninguna");
     System.out.print("Seleccione bebida: ");
     int bebida = sc.nextInt();
 
@@ -138,6 +140,7 @@ public class foodmenu {
         facturaBebida = "Limonada";
         total += 2.50;
         break;
+
     }
 
     // 4. GENERAR FACTURA
