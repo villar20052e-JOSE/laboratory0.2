@@ -9,7 +9,7 @@ public class contadordeestrella {
         int numero = sc.nextInt();
 
 
-        for (int i = 1; <= numero; i++) {
+        for (int i = 1; < = numero; i++) {
             System.out.print("*");
 
         
