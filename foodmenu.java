@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class foodmenu {
+public class FoodMenu {
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
@@ -56,7 +56,7 @@ public class foodmenu {
             break;
           default:
             facturaPlato = "Pizza Combinación";
-            total += 8.50;
+            // total += 8.50
             break;
         }
         break;
