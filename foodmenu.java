@@ -20,10 +20,10 @@ public class foodmenu {
     System.out.println("1. Hamburguesa");
     System.out.println("2. Pizza");
     System.out.println("3. Salchipapas ($6.50)");
-    System.out.println("4. Hot Dog ($5.00)");
+    System.out.println("4. Hot Dog ($2.00)");
     System.out.println("5. Alitas BBQ ($8.50)");
-    System.out.println("6. Pollo Apanado ($7.50)");
-    System.out.println("7. Pollo Asado ($9.00)");
+    System.out.println("6. Pollo Apanado ($3.50)");
+    System.out.println("7. Pollo Asado ($5.00)");
     System.out.print("Seleccione su plato: ");
     int plato = sc.nextInt();
 
@@ -31,32 +31,32 @@ public class foodmenu {
       case 1: // HAMBURGUESA
         System.out.print("¿De (1) Carne o (2) Pollo?: ");
         int tipoH = sc.nextInt();
-        System.out.print("¿(1) Normal ($7.00) o (2) Doble Carne ($9.50)?: ");
+        System.out.print("¿(1) Normal ($6.00) o (2) Doble Carne ($8.50)?: ");
         int tamanoH = sc.nextInt();
         facturaPlato = (tipoH == 1 ? "Hamburguesa de Carne" : "Hamburguesa de Pollo");
         if (tamanoH == 2) {
           facturaPlato += " Doble";
-          total += 9.50;
+          total += 8.50;
         } else {
-          total += 7.00;
+          total += 6.00;
         }
         break;
 
       case 2: // PIZZA
-        System.out.println("Sabores: (1) Peperoni ($8.00), (2) Queso ($7.50), (3) Combinación ($10.00)");
+        System.out.println("Sabores: (1) Peperoni ($5.00), (2) Queso ($3.50), (3) Combinación ($8.50)");
         int saborP = sc.nextInt();
         switch (saborP) {
           case 1:
             facturaPlato = "Pizza Peperoni";
-            total += 8.00;
+            total += 5.00;
             break;
           case 2:
             facturaPlato = "Pizza Queso";
-            total += 7.50;
+            total += 3.50;
             break;
           default:
             facturaPlato = "Pizza Combinación";
-            total += 10.00;
+            total += 8.50;
             break;
         }
         break;
@@ -67,7 +67,7 @@ public class foodmenu {
         break;
       case 4:
         facturaPlato = "Hot Dog";
-        total += 5.00;
+        total += 2.00;
         break;
       case 5:
         facturaPlato = "Alitas BBQ";
@@ -75,11 +75,11 @@ public class foodmenu {
         break;
       case 6:
         facturaPlato = "Pollo Apanado";
-        total += 7.50;
+        total += 3.50;
         break;
       case 7:
         facturaPlato = "Pollo Asado";
-        total += 9.00;
+        total += 5.00;
         break;
       default:
         facturaPlato = "Orden Genérica";
