@@ -10,10 +10,9 @@ public class foodmenu {
 
     // EL BUCLE DO-WHILE HACE QUE EL PROGRAMA SEA DINÁMICO
     do {
-
       // Variables para la factura
       String facturaPlato = "";
-      String facturaBebida = "";
+      String facturaBebida = "Ninguna"; // Inicializada por si no elige
       String facturaExtra = "";
       double total = 0;
 
@@ -30,8 +29,16 @@ public class foodmenu {
       System.out.println("5. Alitas BBQ ($8.50)");
       System.out.println("6. Pollo Apanado ($3.50)");
       System.out.println("7. Pollo Asado ($5.00)");
+      System.out.println("0. Salir del programa"); // NUEVA OPCIÓN
       System.out.print("Seleccione su plato: ");
       int plato = sc.nextInt();
+
+      // Lógica para salir
+      if (plato == 0) {
+        continuar = false;
+        System.out.println("Saliendo... ¡Que tenga un buen día!");
+        continue; // Salta directamente al final del do-while
+      }
 
       switch (plato) {
         case 1: // HAMBURGUESA
@@ -60,9 +67,14 @@ public class foodmenu {
               facturaPlato = "Pizza Queso";
               total += 3.50;
               break;
-            default:
+            case 3:
               facturaPlato = "Pizza Combinación";
-              // total += 8.50
+              total += 8.50;
+              break;
+            default:
+              System.out.println("Sabor no reconocido, se asignará Pizza Básica.");
+              facturaPlato = "Pizza Genérica";
+              total += 4.00;
               break;
           }
           break;
@@ -87,8 +99,9 @@ public class foodmenu {
           facturaPlato = "Pollo Asado";
           total += 5.00;
           break;
-        default:
-          facturaPlato = "Orden Genérica";
+        default: // CASO PARA NÚMERO QUE NO APARECE
+          System.out.println("Opción de plato no válida. Se marcará como Orden Especial.");
+          facturaPlato = "Orden Especial";
           total += 5.00;
           break;
       }
@@ -114,7 +127,11 @@ public class foodmenu {
           facturaExtra = "Yuca";
           total += 2.00;
           break;
+        case 4:
+          facturaExtra = "Sin adicionales";
+          break;
         default:
+          System.out.println("Opción inválida, no se añadirán extras.");
           facturaExtra = "Sin adicionales";
           break;
       }
@@ -124,19 +141,19 @@ public class foodmenu {
       System.out.println("1. Soda ($1.50)");
       System.out.println("2. Jugo Natural ($3.00)");
       System.out.println("3. Limonada ($2.50)");
-      System.out.println("4. agua");
-      System.out.println("5. ninguna");
+      System.out.println("4. Agua ($1.00)");
+      System.out.println("5. Ninguna");
       System.out.print("Seleccione bebida: ");
       int bebida = sc.nextInt();
 
       switch (bebida) {
-        case 1: // SODA
+        case 1:
           System.out.print("Sabor: (1) Coca Cola, (2) Pepsi, (3) Fresca: ");
           int tipoS = sc.nextInt();
           facturaBebida = (tipoS == 1 ? "Coca Cola" : (tipoS == 2 ? "Pepsi" : "Fresca"));
           total += 1.50;
           break;
-        case 2: // JUGO
+        case 2:
           System.out.print("Sabor: (1) Guayaba, (2) Piña, (3) Frutos Rojos, (4) Naranja: ");
           int tipoJ = sc.nextInt();
           facturaBebida = "Jugo de Fruta";
@@ -146,7 +163,17 @@ public class foodmenu {
           facturaBebida = "Limonada";
           total += 2.50;
           break;
-
+        case 4:
+          facturaBebida = "Agua";
+          total += 1.00;
+          break;
+        case 5:
+          facturaBebida = "Ninguna";
+          break;
+        default:
+          System.out.println("Opción no válida, no se servirá bebida.");
+          facturaBebida = "Ninguna";
+          break;
       }
 
       // 4. GENERAR FACTURA
@@ -160,10 +187,18 @@ public class foodmenu {
       System.out.printf("TOTAL A PAGAR:    $%.2f\n", total);
       System.out.println("============================================");
       System.out.println("   Gracias por preferir El Garaje del Sabor ");
-      System.out.println("============================================");
+      System.out.println("============================================\n");
 
-    } while (continuar); // El programa se repite mientras 'continuar' sea verdadero
+      // Preguntar si desea hacer otra orden para que no sea un bucle infinito
+      System.out.print("¿Desea realizar otra orden? (1. Sí / 2. No): ");
+      int otraVez = sc.nextInt();
+      if (otraVez != 1) {
+        continuar = false;
+      }
 
+    } while (continuar);
+
+    System.out.println("orden cancelada. ¡Vuelva pronto!");
     sc.close();
   }
 }
