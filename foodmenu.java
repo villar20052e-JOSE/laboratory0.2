@@ -1,54 +1,54 @@
 import java.util.Scanner;
 
-public class foodmenu {
+public class FoodMenu {
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
-    // Variable para controlar si el usuario quiere seguir comprando
-    boolean continuar = true;
+    // Variable to control if the user wants to keep buying
+    boolean keepGoing = true;
 
-    // EL BUCLE DO-WHILE HACE QUE EL PROGRAMA SEA DINÁMICO
+    // THE DO-WHILE LOOP MAKES THE PROGRAM DYNAMIC
     do {
-      // Variables para la factura
-      String facturaPlato = "";
-      String facturaBebida = "Ninguna"; // Inicializada por si no elige
-      String facturaExtra = "";
+      // Variables for the invoice
+      String mainDishInvoice = "";
+      String drinkInvoice = "None"; // Initialized in case none is chosen
+      String extraInvoice = "";
       double total = 0;
 
       System.out.println("============================================");
-      System.out.println("      ¡BIENVENIDO AL GARAJE DEL SABOR!      ");
+      System.out.println("          WELCOME TO FLAVOR GARAGE!         ");
       System.out.println("============================================\n");
 
-      // 1. PLATO PRINCIPAL
-      System.out.println("--- MENÚ DE PLATOS PRINCIPALES ---");
-      System.out.println("1. Hamburguesa");
+      // 1. MAIN DISH
+      System.out.println("--- MAIN DISH MENU ---");
+      System.out.println("1. Burger");
       System.out.println("2. Pizza");
       System.out.println("3. Salchipapas ($6.50)");
       System.out.println("4. Hot Dog ($2.00)");
-      System.out.println("5. Alitas BBQ ($8.50)");
-      System.out.println("6. Pollo Apanado ($3.50)");
-      System.out.println("7. Pollo Asado ($5.00)");
-      System.out.println("0. Salir del programa"); // NUEVA OPCIÓN
-      System.out.print("Seleccione su plato: ");
-      int plato = sc.nextInt();
+      System.out.println("5. BBQ Wings ($8.50)");
+      System.out.println("6. Breaded Chicken ($3.50)");
+      System.out.println("7. Roasted Chicken ($5.00)");
+      System.out.println("0. Exit program"); // NEW OPTION
+      System.out.print("Select your dish: ");
+      int dish = sc.nextInt();
 
-      // Lógica para salir
-      if (plato == 0) {
-        continuar = false;
-        System.out.println("Saliendo... ¡Que tenga un buen día!");
-        continue; // Salta directamente al final del do-while
+      // Exit logic
+      if (dish == 0) {
+        keepGoing = false;
+        System.out.println("Exiting... Have a great day!");
+        continue; // Jumps directly to the end of the do-while
       }
 
-      switch (plato) {
-        case 1: // HAMBURGUESA
-          System.out.print("¿De (1) Carne o (2) Pollo?: ");
-          int tipoH = sc.nextInt();
-          System.out.print("¿(1) Normal ($6.00) o (2) Doble Carne ($8.50)?: ");
-          int tamanoH = sc.nextInt();
-          facturaPlato = (tipoH == 1 ? "Hamburguesa de Carne" : "Hamburguesa de Pollo");
-          if (tamanoH == 2) {
-            facturaPlato += " Doble";
+      switch (dish) {
+        case 1: // BURGER
+          System.out.print("Is it (1) Beef or (2) Chicken?: ");
+          int burgerType = sc.nextInt();
+          System.out.print(" (1) Normal ($6.00) or (2) Double Meat ($8.50)?: ");
+          int burgerSize = sc.nextInt();
+          mainDishInvoice = (burgerType == 1 ? "Beef Burger" : "Chicken Burger");
+          if (burgerSize == 2) {
+            mainDishInvoice += " Double";
             total += 8.50;
           } else {
             total += 6.00;
@@ -56,149 +56,149 @@ public class foodmenu {
           break;
 
         case 2: // PIZZA
-          System.out.println("Sabores: (1) Peperoni ($5.00), (2) Queso ($3.50), (3) Combinación ($8.50)");
-          int saborP = sc.nextInt();
-          switch (saborP) {
+          System.out.println("Flavors: (1) Pepperoni ($5.00), (2) Cheese ($3.50), (3) Combination ($8.50)");
+          int pizzaFlavor = sc.nextInt();
+          switch (pizzaFlavor) {
             case 1:
-              facturaPlato = "Pizza Peperoni";
+              mainDishInvoice = "Pepperoni Pizza";
               total += 5.00;
               break;
             case 2:
-              facturaPlato = "Pizza Queso";
+              mainDishInvoice = "Cheese Pizza";
               total += 3.50;
               break;
             case 3:
-              facturaPlato = "Pizza Combinación";
+              mainDishInvoice = "Combination Pizza";
               total += 8.50;
               break;
             default:
-              System.out.println("Sabor no reconocido, se asignará Pizza Básica.");
-              facturaPlato = "Pizza Genérica";
+              System.out.println("Flavor not recognized, Basic Pizza will be assigned.");
+              mainDishInvoice = "Generic Pizza";
               total += 4.00;
               break;
           }
           break;
 
         case 3:
-          facturaPlato = "Salchipapas";
+          mainDishInvoice = "Salchipapas";
           total += 6.50;
           break;
         case 4:
-          facturaPlato = "Hot Dog";
+          mainDishInvoice = "Hot Dog";
           total += 2.00;
           break;
         case 5:
-          facturaPlato = "Alitas BBQ";
+          mainDishInvoice = "BBQ Wings";
           total += 8.50;
           break;
         case 6:
-          facturaPlato = "Pollo Apanado";
+          mainDishInvoice = "Breaded Chicken";
           total += 3.50;
           break;
         case 7:
-          facturaPlato = "Pollo Asado";
+          mainDishInvoice = "Roasted Chicken";
           total += 5.00;
           break;
-        default: // CASO PARA NÚMERO QUE NO APARECE
-          System.out.println("Opción de plato no válida. Se marcará como Orden Especial.");
-          facturaPlato = "Orden Especial";
+        default: // CASE FOR NUMBER NOT LISTED
+          System.out.println("Invalid dish option. It will be marked as a Special Order.");
+          mainDishInvoice = "Special Order";
           total += 5.00;
           break;
       }
 
-      // 2. ACOMPAÑAMIENTO
-      System.out.println("\n--- ACOMPAÑAMIENTOS ADICIONALES ---");
-      System.out.println("1. Papas fritas ($2.50)");
+      // 2. SIDE DISHES
+      System.out.println("\n--- ADDITIONAL SIDE DISHES ---");
+      System.out.println("1. French Fries ($2.50)");
       System.out.println("2. Patacones ($2.50)");
-      System.out.println("3. Yuca ($2.00)");
-      System.out.println("4. Ninguno");
-      System.out.print("Seleccione extra: ");
+      System.out.println("3. Cassava ($2.00)");
+      System.out.println("4. None");
+      System.out.print("Select extra: ");
       int extra = sc.nextInt();
       switch (extra) {
         case 1:
-          facturaExtra = "Papas fritas";
+          extraInvoice = "French Fries";
           total += 2.50;
           break;
         case 2:
-          facturaExtra = "Patacones";
+          extraInvoice = "Patacones";
           total += 2.50;
           break;
         case 3:
-          facturaExtra = "Yuca";
+          extraInvoice = "Cassava";
           total += 2.00;
           break;
         case 4:
-          facturaExtra = "Sin adicionales";
+          extraInvoice = "No extras";
           break;
         default:
-          System.out.println("Opción inválida, no se añadirán extras.");
-          facturaExtra = "Sin adicionales";
+          System.out.println("Invalid option, no extras will be added.");
+          extraInvoice = "No extras";
           break;
       }
 
-      // 3. BEBIDAS
-      System.out.println("\n--- BEBIDAS ---");
+      // 3. DRINKS
+      System.out.println("\n--- DRINKS ---");
       System.out.println("1. Soda ($1.50)");
-      System.out.println("2. Jugo Natural ($3.00)");
-      System.out.println("3. Limonada ($2.50)");
-      System.out.println("4. Agua ($1.00)");
-      System.out.println("5. Ninguna");
-      System.out.print("Seleccione bebida: ");
-      int bebida = sc.nextInt();
+      System.out.println("2. Natural Juice ($3.00)");
+      System.out.println("3. Lemonade ($2.50)");
+      System.out.println("4. Water ($1.00)");
+      System.out.println("5. None");
+      System.out.print("Select drink: ");
+      int drink = sc.nextInt();
 
-      switch (bebida) {
+      switch (drink) {
         case 1:
-          System.out.print("Sabor: (1) Coca Cola, (2) Pepsi, (3) Fresca: ");
-          int tipoS = sc.nextInt();
-          facturaBebida = (tipoS == 1 ? "Coca Cola" : (tipoS == 2 ? "Pepsi" : "Fresca"));
+          System.out.print("Flavor: (1) Coca Cola, (2) Pepsi, (3) Fresca: ");
+          int sodaType = sc.nextInt();
+          drinkInvoice = (sodaType == 1 ? "Coca Cola" : (sodaType == 2 ? "Pepsi" : "Fresca"));
           total += 1.50;
           break;
         case 2:
-          System.out.print("Sabor: (1) Guayaba, (2) Piña, (3) Frutos Rojos, (4) Naranja: ");
-          int tipoJ = sc.nextInt();
-          facturaBebida = "Jugo de Fruta";
+          System.out.print("Flavor: (1) Guava, (2) Pineapple, (3) Red Berries, (4) Orange: ");
+          int juiceType = sc.nextInt();
+          drinkInvoice = "Fruit Juice";
           total += 3.00;
           break;
         case 3:
-          facturaBebida = "Limonada";
+          drinkInvoice = "Lemonade";
           total += 2.50;
           break;
         case 4:
-          facturaBebida = "Agua";
+          drinkInvoice = "Water";
           total += 1.00;
           break;
         case 5:
-          facturaBebida = "Ninguna";
+          drinkInvoice = "None";
           break;
         default:
-          System.out.println("Opción no válida, no se servirá bebida.");
-          facturaBebida = "Ninguna";
+          System.out.println("Invalid option, no drink will be served.");
+          drinkInvoice = "None";
           break;
       }
 
-      // 4. GENERAR FACTURA
+      // 4. GENERATE INVOICE
       System.out.println("\n============================================");
-      System.out.println("           FACTURA DE CONSUMO               ");
+      System.out.println("              CONSUMPTION INVOICE           ");
       System.out.println("============================================");
-      System.out.println("Plato Principal:  " + facturaPlato);
-      System.out.println("Acompañamiento:   " + facturaExtra);
-      System.out.println("Bebida:           " + facturaBebida);
+      System.out.println("Main Dish:       " + mainDishInvoice);
+      System.out.println("Side Dish:       " + extraInvoice);
+      System.out.println("Drink:           " + drinkInvoice);
       System.out.println("--------------------------------------------");
-      System.out.printf("TOTAL A PAGAR:    $%.2f\n", total);
+      System.out.printf("TOTAL TO PAY:    $%.2f\n", total);
       System.out.println("============================================");
-      System.out.println("   Gracias por preferir El Garaje del Sabor ");
+      System.out.println("      Thanks for choosing Flavor Garage     ");
       System.out.println("============================================\n");
 
-      // Preguntar si desea hacer otra orden para que no sea un bucle infinito
-      System.out.print("¿Desea realizar otra orden? (1. Sí / 2. No): ");
-      int otraVez = sc.nextInt();
-      if (otraVez != 1) {
-        continuar = false;
+      // Ask if the user wants to place another order to avoid an infinite loop
+      System.out.print("Would you like to place another order? (1. Yes / 2. No): ");
+      int tryAgain = sc.nextInt();
+      if (tryAgain != 1) {
+        keepGoing = false;
       }
 
-    } while (continuar);
+    } while (keepGoing);
 
-    System.out.println("orden cancelada. ¡Vuelva pronto!");
+    System.out.println("Order cancelled. Come back soon!");
     sc.close();
   }
 }
