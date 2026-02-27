@@ -4,36 +4,35 @@ import java.util.Scanner;
 public class GuessNumber {
     public static void main(String[] args) {
 
-        Scanner entrada = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         Random random = new Random();
 
-        int SecretNumber = random.nextInt(30) + 1;
+        int secretNumber = random.nextInt(30) + 1;
 
-        int Attemps = 0;
-        int contador = 0;
+        int attempts = 0;
+        int counter = 0;
 
-        System.out.println("adivinanumero el numerosecreto(1 al 30)");
+        System.out.println("Guess the secret number (1 to 30)");
 
         do {
-            System.out.print("ingresa un numero:");
-            Attemps = entrada.nextInt();
-            contador++;
+            System.out.print("Enter a number: ");
+            attempts = input.nextInt();
+            counter++;
 
-            if (Attemps == SecretNumber) {
-                System.out.println(" ¡Correcto! adivinaste el numero felicidades");
-            } else if (Math.abs(Attemps - SecretNumber) <= 5) {
-                System.out.println("¡Estás cerca del numero!");
-            } else if (Attemps < SecretNumber) {
-                System.out.println("el numero es muy bajo");
+            if (attempts == secretNumber) {
+                System.out.println("Correct! You guessed the number, congratulations!");
+            } else if (Math.abs(attempts - secretNumber) <= 5) {
+                System.out.println("You are close to the number!");
+            } else if (attempts < secretNumber) {
+                System.out.println("The number is too low");
             } else {
-                System.out.println("el numero es muy alto");
+                System.out.println("The number is too high");
             }
 
-        } while (Attemps != SecretNumber);
+        } while (attempts != secretNumber);
 
-        System.out.println("intentos realizados:" + contador);
+        System.out.println("Attempts made: " + counter);
 
-        entrada.close();
+        input.close();
     }
-
 }
