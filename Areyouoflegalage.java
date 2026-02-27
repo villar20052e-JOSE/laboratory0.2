@@ -1,6 +1,7 @@
 import java.util.Scanner; //importamos la clase scaanner 
 
-public class EresMayorEdad{
+public class Areyouoflegalage{
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in); //Creamos el objeto Scanner para leer datos desde el teclado
