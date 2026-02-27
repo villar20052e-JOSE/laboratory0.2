@@ -13,7 +13,9 @@ public class GuessNumber {
             Attemps= entrada.nextInt();
 
             if (Attemps == SecretNumber){
-                System.out.println("el numero es correcto");
+                System.out.println("!el numero es correcto felidades!");
+             }else if  (Math.abs(Attemps - SecretNumber) <= 5) {
+                System.out.println("¡Estás cerca del numero!");
             } else if (Attemps < SecretNumber) {
                 System.out.println("el numero es muy bajo");
             } else {
@@ -22,6 +24,9 @@ public class GuessNumber {
 
         } while(Attemps != SecretNumber);
 
+        System.out.println("intentos realizados:" + contador);
+
+    
         entrada.close();
     }  
 
