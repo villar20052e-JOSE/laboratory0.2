@@ -111,24 +111,24 @@ public class FoodMenu {
       System.out.println("1. French Fries ($2.50)");
       System.out.println("2. Patacones ($2.50)");
       System.out.println("3. Cassava ($2.00)");
-      System.out.println("4. None");
+      System.out.println("4. none ❌");
       System.out.print("Select extra: ");
       int extra = sc.nextInt();
       switch (extra) {
         case 1:
-          extraInvoice = "French Fries";
+          extraInvoice = "French Fries🍟";
           total += 2.50;
           break;
         case 2:
-          extraInvoice = "Patacones";
+          extraInvoice = "Patacones🍌";
           total += 2.50;
           break;
         case 3:
-          extraInvoice = "Cassava";
+          extraInvoice = "Cassava🍠";
           total += 2.00;
           break;
         case 4:
-          extraInvoice = "No extras";
+          extraInvoice = "No extras❌";
           break;
         default:
           System.out.println("Invalid option, no extras will be added.");
@@ -141,8 +141,8 @@ public class FoodMenu {
       System.out.println("1. Soda ($1.50)");
       System.out.println("2. Natural Juice ($3.00)");
       System.out.println("3. Lemonade ($2.50)");
-      System.out.println("4. Water ($1.00)");
-      System.out.println("5. None");
+      System.out.println("4. Water ");
+      System.out.println("5. None❌");
       System.out.print("Select drink: ");
       int drink = sc.nextInt();
 
@@ -165,7 +165,7 @@ public class FoodMenu {
           break;
         case 4:
           drinkInvoice = "Water";
-          total += 1.00;
+          total += 0;
           break;
         case 5:
           drinkInvoice = "None";
@@ -177,17 +177,17 @@ public class FoodMenu {
       }
 
       // 4. GENERATE INVOICE
-      System.out.println("\n============================================");
+      System.out.println("\n__________________________________________");
       System.out.println("              CONSUMPTION INVOICE           ");
-      System.out.println("============================================");
+      System.out.println("____________________________________________");
       System.out.println("Main Dish:       " + mainDishInvoice);
       System.out.println("Side Dish:       " + extraInvoice);
       System.out.println("Drink:           " + drinkInvoice);
       System.out.println("--------------------------------------------");
       System.out.printf("TOTAL TO PAY:    $%.2f\n", total);
-      System.out.println("============================================");
+      System.out.println("____________________________________________");
       System.out.println("      Thanks for choosing Flavor Garage     ");
-      System.out.println("============================================\n");
+      System.out.println("____________________________________________\n");
 
       // Ask if the user wants to place another order to avoid an infinite loop
       System.out.print("Would you like to place another order? (1. Yes / 2. No): ");
