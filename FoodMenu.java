@@ -5,14 +5,14 @@ public class FoodMenu {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
-    // Variable to control if the user wants to keep buying
+    // Variable para controlar si el usuario desea seguir comprando.
     boolean keepGoing = true;
 
-    // THE DO-WHILE LOOP MAKES THE PROGRAM DYNAMIC
+    // El bucle do-while hace que el programa sea dinámico.
     do {
-      // Variables for the invoice
+      // Variables para la factura
       String mainDishInvoice = "";
-      String drinkInvoice = "None"; // Initialized in case none is chosen
+      String drinkInvoice = "None"; // Inicializado por si no se elige ninguna
       String extraInvoice = "";
       double total = 0;
 
@@ -20,7 +20,7 @@ public class FoodMenu {
       System.out.println("          WELCOME TO FLAVOR GARAGE!         ");
       System.out.println("============================================\n");
 
-      // 1. MAIN DISH
+      // Lógica de salida
       System.out.println("--- MAIN DISH MENU ---");
       System.out.println("1. Burger");
       System.out.println("2. Pizza");
@@ -33,15 +33,15 @@ public class FoodMenu {
       System.out.print("Select your dish: ");
       int dish = sc.nextInt();
 
-      // Exit logic
+      // logica de salida
       if (dish == 0) {
         keepGoing = false;
         System.out.println("Exiting... Have a great day!");
-        continue; // Jumps directly to the end of the do-while
+        continue; // Salta directamente al final del do-while
       }
 
       switch (dish) {
-        case 1: // BURGER
+        case 1: // seleccion del tipo de hamburguesa
           System.out.print("Is it (1) Beef or (2) Chicken?: ");
           int burgerType = sc.nextInt();
           System.out.print(" (1) Normal ($6.00) or (2) Double Meat ($8.50)?: ");
@@ -55,7 +55,7 @@ public class FoodMenu {
           }
           break;
 
-        case 2: // PIZZA
+        case 2: // seleccion del tipo de pizza
           System.out.println("Flavors: (1) Pepperoni ($5.00), (2) Cheese ($3.50), (3) Combination ($8.50)");
           int pizzaFlavor = sc.nextInt();
           switch (pizzaFlavor) {
@@ -99,14 +99,14 @@ public class FoodMenu {
           mainDishInvoice = "Roasted Chicken";
           total += 5.00;
           break;
-        default: // CASE FOR NUMBER NOT LISTED
+        default: // Caso para un número que no aparece en la lista
           System.out.println("Invalid dish option. It will be marked as a Special Order.");
           mainDishInvoice = "Special Order";
           total += 5.00;
           break;
       }
 
-      // 2. SIDE DISHES
+      // 2. seleccion de acompañamiento
       System.out.println("\n--- ADDITIONAL SIDE DISHES ---");
       System.out.println("1. French Fries ($2.50)");
       System.out.println("2. Patacones ($2.50)");
@@ -136,7 +136,7 @@ public class FoodMenu {
           break;
       }
 
-      // 3. DRINKS
+      // 3. seleccion de bebidas
       System.out.println("\n--- DRINKS ---");
       System.out.println("1. Soda ($1.50)");
       System.out.println("2. Natural Juice ($3.00)");
@@ -176,7 +176,7 @@ public class FoodMenu {
           break;
       }
 
-      // 4. GENERATE INVOICE
+      // 4. generacion de fractura
       System.out.println("\n__________________________________________");
       System.out.println("              CONSUMPTION INVOICE           ");
       System.out.println("____________________________________________");
@@ -189,7 +189,8 @@ public class FoodMenu {
       System.out.println("      Thanks for choosing Flavor Garage     ");
       System.out.println("____________________________________________\n");
 
-      // Ask if the user wants to place another order to avoid an infinite loop
+      // Preguntar si el usuario desea realizar otra orden para evitar un bucle
+      // infinito
       System.out.print("Would you like to place another order? (1. Yes / 2. No): ");
       int tryAgain = sc.nextInt();
       if (tryAgain != 1) {
