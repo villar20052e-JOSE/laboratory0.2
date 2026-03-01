@@ -7,6 +7,10 @@ public class GuessNumber {
         Scanner input = new Scanner(System.in);
         Random random = new Random();
 
+        char options;
+
+        do{
+
         int secretNumber = random.nextInt(30) + 1;
 
         int attempts = 0;
@@ -32,6 +36,13 @@ public class GuessNumber {
         } while (attempts != secretNumber);
 
         System.out.println("Attempts made: " + counter);
+
+        System.out.println("Do you want to play again? (y/n)");
+        options = input.next().charAt(0);
+
+    }while ((options == 'y') || (options == 'Y'));
+
+    System.out.println("Thank you for playing my game!");
 
         input.close();
     }
