@@ -4,15 +4,15 @@ public class StarCounter {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        boolean keepCounting = true;
+        boolean keepCounting = true; //variable para controlar  si el programa debe continuar
 
         System.out.println("       WELCOME TO MY STAR COUNTER     ");
 
-        while (keepCounting) {
-            System.out.print("\nHow many stars (size)? ");
+        while (keepCounting) { //bucle que permite que el usuario pueda crear varias figuras
+            System.out.print("\nHow many stars (size)? ");//pregunta el tamaño de la figura 
             int size = scanner.nextInt();
 
-            System.out.println("\nChoose a style:");
+            System.out.println("\nChoose a style:");// menu con diferentes estilos
             System.out.println("1. Horizontal Line");
             System.out.println("2. Vertical Column");
             System.out.println("3. Pyramid Shape");
