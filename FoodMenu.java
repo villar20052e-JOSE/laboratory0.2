@@ -16,9 +16,9 @@ public class FoodMenu {
       String extraInvoice = "";
       double total = 0;
 
-      System.out.println("============================================");
+      System.out.println("----------------------------------------------");
       System.out.println("          WELCOME TO FLAVOR GARAGE!         ");
-      System.out.println("============================================\n");
+      System.out.println("--------------------------------------------\n");
 
       // Lógica de salida
       System.out.println("--- MAIN DISH MENU ---");
@@ -201,5 +201,6 @@ public class FoodMenu {
 
     System.out.println("Order cancelled. Come back soon!");
     sc.close();
+
   }
 }
