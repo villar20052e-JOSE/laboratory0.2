@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "FoodMenu",
+            "request": "launch",
+            "mainClass": "FoodMenu",
+            "projectName": "laboratory0.2_d416925d"
+        },
+        {
+            "type": "java",
+            "name": "StarCounter",
+            "request": "launch",
+            "mainClass": "StarCounter",
+            "projectName": "laboratory0.2_d416925d"
+        },
+        {
+            "type": "java",
+            "name": "AreYouLegal",
+            "request": "launch",
+            "mainClass": "AreYouLegal",
+            "projectName": "laboratory0.2_d416925d"
+        },
+        {
+            "type": "java",
+            "name": "Areyoulegal",
+            "request": "launch",
+            "mainClass": "Areyoulegal",
+            "projectName": "laboratory0.2_d416925d"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}
